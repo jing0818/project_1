@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-top: 50px;
+        }
+
+        div{
+            position: relative;
+            height: 500px;
+        }
+
+        
+        
+        li{
+            float: left;
+            list-style: none;
+            counter-increment: num1 5;
+        }
+
+        
+        /* span:nth-child(5n){
+            counter-increment: num1 5;
+        } */
+
+        li::after{
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            margin-left: -12px;
+            content:counter(num1);
+        }
+
+
+
+
+        span{
+            border-bottom: 2px solid #333333;
+            padding-right:4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>        
+        <ul>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+            <li><span>'</span><span>'</span><span>'</span><span>'</span><span>|</span></li>
+        </ul>
+        <div></div>
+        
+    </div>
+    
+</body>
+</html>

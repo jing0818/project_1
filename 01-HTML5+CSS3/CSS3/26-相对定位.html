@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* css书写：1：定位/浮动 /display; 2：盒子模型 3：文字属性 */
+        .box{
+            /* 如果left和right都有，以left为准；top和bottom都有 以top为准 */
+            position: relative;
+            /* top: 20px; */
+            
+            /* 
+                1：占有原来的位置
+                2：仍然具体标签原有的显示模式特点
+                3：改变位置参照自己原来的位置
+            */
+
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .box2{
+            width: 300px;
+            height: 400px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        123
+    </div>
+    <div class="box2">
+        321
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画实现步骤</title>
+    <style>
+        /* 
+            动画实现步骤：
+                @keyframes 动画名称{
+                    from{}
+                    to{}
+                }
+
+                @keyframes 动画名称{
+                    0%{}
+                    10%{}
+                    15%{}
+                    100%{}
+                }
+
+                使用步骤：
+                    animation: 动画名称 动画时长;
+
+
+        */
+
+
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            
+            /* 添加使用动画属性 */
+            animation: update02 2s;
+            
+        }
+
+        /* 一. 定义动画：从200变大到600 */
+        @keyframes update{
+            from{
+                width: 200px;
+            }
+            to{
+                width: 600px;
+            }
+        }
+        
+
+        /* 二. 定义动画：200 到 500*300 到 800*500 */
+        /* 百分比指的是动画总时长的占比 */
+        @keyframes update02{
+            10%{
+                width: 200px;
+            }
+            30%{
+                width: 500px;
+                height: 300px;
+            }
+            100%{
+                width: 800px;
+                height: 500px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

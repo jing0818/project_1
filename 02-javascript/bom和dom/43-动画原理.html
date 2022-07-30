@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>冲啊</button>
+    <div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    function aniter(obj, tranger) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            if (obj.offsetLeft >= tranger) {
+                clearInterval(obj.timer);
+                return;
+            }
+            obj.style.left = obj.offsetLeft + 1 + 'px';
+        }, 30)
+
+    }
+
+    var div = document.querySelector('div');
+    var button=document.querySelector('button');
+    button.addEventListener('click',function(){
+        aniter(div, 400);
+    })
+    
+</script>

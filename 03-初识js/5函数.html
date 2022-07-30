@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的定义</title>
+    <script>
+        /*
+            第一种函数定义方式-----最常用的，可读性强
+
+            无参的
+            function text01(){
+                alert("无参的函数");
+            }
+
+            有参的
+            function text01(a,b){
+                alert("a："+a+"  b："+b);
+            }
+
+            有返回值的
+            function text01(a,b){
+                alert("a："+a+"  b："+b);
+                return a+b;
+            }
+            如果有返回值函数，如果前台接收的话就会输出返回的值
+            如果没有返回值的话，前台依旧接收的话前台输出undefined
+        */
+
+
+
+
+        //第一种函数定义方式-------最常用的方式
+        function text01(a,b){
+            alert("用户名："+a+"密码："+b);
+        }
+        function text02(a,b){
+            alert("a+b="+a+b);
+            return a+b;
+        }
+
+        /*
+            第二种函数定义方式-------最不常用的方式，可读性差，不建议使用
+
+            无参的：var text03=new Function("alert('不常用函数方式-----')");
+            有参的：var text04=new Function("a","b","alert('不常用函数方式-----a:'+a+'-----b:'+b)");
+            有返回值的：var text05=new Function("a","b","alert('a+b');return '小笨蛋'; ")
+        */
+        var text03=new Function("alert('不常用函数方式-----')");
+        var text04=new Function("a","b","alert('不常用函数方式-----a:'+a+'-----b:'+b)");
+        var text05=new Function("a","b","alert('a+b');return '小笨蛋'; ")
+
+
+        /*
+            第三种函数定义方式----匿名函数
+        */
+        
+        var text06=function(){
+            alert('无参匿名函数-------------');
+        }
+        var text07=function(a,b){
+            alert('有参匿名函数-------------a:'+a+'--------b:'+b);
+        }
+        var text08=function(){
+            alert('有返回值匿名函数1-------------');
+            return 200;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮1" onclick="document.write(text01('admin',123))">
+    <input type="button" value="按钮2" onclick="document.write(text02(1,8))">
+    <input type="button" value="按钮3" onclick="text03()">
+    <input type="button" value="按钮4" onclick="text04(12,13)">
+    <input type="button" value="按钮5" onclick="document.write(text05(1,2))">
+    <input type="button" value="按钮6" onclick="text06()">
+    <input type="button" value="按钮7" onclick="text07(10,20)">
+    <input type="button" value="按钮8" onclick="document.write(text08())">
+</body>
+</html>

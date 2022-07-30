@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            写法：
+                @media(媒体特性){
+                    选择器{
+                        css属性
+                    }
+                }
+
+                @media(width:320px){
+                    html{
+                        font-size:32px
+                    }
+                }
+        */
+
+        /* 使用媒体查询，根据不同的视口宽度，设置不同的根字号 */
+        @media(width:375px){
+            html{
+                font-size: 40px;
+            }
+
+            
+        }
+        .box{
+                width: 2rem;
+                height: 2rem;
+                background-color: pink;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

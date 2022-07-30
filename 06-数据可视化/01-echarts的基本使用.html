@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/echarts.min.js"></script>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            /* background-color: pink; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>
+<script>
+    /* 
+        步骤1：下载并引入echarts.js文件
+        步骤2：准备一个具备大小的DOM容器
+        步骤3：初始化echarts实例对象
+        步骤4：指定配置项和数据
+        步骤5：将配置项设置给echarts实例对象
+    */
+    var myChart = echarts.init(document.querySelector('.box'));
+
+    // 指定图表的配置项和数据
+    option = {
+        title: {
+            text: 'Referer of a Website',
+            subtext: 'Fake Data',
+            left: 'center',
+            link:'./02-echarts相关配置讲解.html',
+            textStyle:{
+                color:'red'
+            }
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left'
+        },
+        series: [
+            {
+                name: 'Access From',
+                type: 'pie',
+                radius: '50%',
+                data: [
+                    { value: 1048, name: 'java' },
+                    { value: 735, name: 'web' },
+                    { value: 580, name: 'php' },
+                    { value: 484, name: 'C#' },
+                    { value: 300, name: 'C++' }
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+        【...】 扩展运算符能将【数组】转换为逗号分割的参数序列
+        const arr=['张三','李四','王五'];
+            转换为：'张三','李四','王五'
+    */
+
+    // 声明一个数组
+    const arr=['张三','李四','王五'];
+
+    function changwan(){
+        console.log(arguments);
+    }
+
+    changwan(...arr);
+</script>

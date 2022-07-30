@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js数据类型</title>
+    <!-- <script> -->
+        <!-- alert('第一个java脚本语言'); -->
+    <!-- </script> -->
+    <script>
+        function text(){
+            var num=12;//number
+            console.log(num);
+            console.log(typeof num);
+
+            var num2="张三";//string
+            console.log(num2);
+            console.log(typeof num2);
+
+            //number
+            var num3=1/0;//Infinity
+            console.log("num3:"+num3);
+            console.log(typeof num3);
+
+            //number
+            var num4=1.7;
+            console.log(num4);
+            console.log(typeof num4);
+
+            //number
+            var num5=parseInt("12ab4c5");
+            console.log(num5);
+
+            //boolean
+            var num6=true;
+            console.log(num6);
+            console.log(typeof num6);
+
+            //undefined
+            var num7;
+            console.log(num7);
+            console.log(typeof num7);
+
+
+            var num8=null;
+            console.log(num8);//null
+            console.log(typeof num8);//object
+        }
+    </script>
+</head>
+<body>
+    <!--<input type="button" value="提交" onclick="javaScript:alert('你是个哈巴狗');">-->
+    <input type="button" value="提交" onclick="text()">
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js数据转换</title>
+    <script>
+        function text(){
+            //string转number
+            var num1=parseInt('12abc');//12
+            var num2=parseInt('12a3bc');//12 
+            var num3=parseInt('1.9');//1
+            var num4=parseInt('1/0');//1
+            var num5=parseInt('0/0');//0
+            var num6=parseInt('acbs2a');//NoN
+            var num7=parseFloat('1.9abc');//1.9
+
+            console.log(num1);
+            console.log(num2);
+            console.log(num3);
+            console.log(num4);
+            console.log(num5);
+            console.log(num6);
+            console.log(num7);
+            console.log('========================');
+            //boolean类型和数字相加true会变成1，false变成0
+            //boolean类型和string相加合成一个新的字符串
+            // 其他类型转换
+            console.log(12+5);//17
+            console.log(12+true);//13
+            console.log(12+false);//12
+            console.log(12+"abc");//12abc
+            console.log(true+"abc");//trueabc
+            console.log(false+"abc");//falseabc
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="提交" onclick="text()">
+</body>
+</html>

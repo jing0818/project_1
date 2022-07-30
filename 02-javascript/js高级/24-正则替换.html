@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="message" cols="30" rows="10"></textarea><button>提交</button>
+    <div></div>
+</body>
+</html>
+<script>
+    /* 
+        replace 替换
+        replace()方法可以实现替换字符串操作,用来替换的参数可以是一个字符串或是一个正则表达式
+
+        stringObject.replace(regexp/substr,replacement)
+
+        第一个参数:被替换的字符串或者正则表达式
+        第二个参数:替换为的字符串
+        返回值是一个替换完毕的新字符串
+    */
+
+    // let str='andy和red';
+    // let newStr=str.replace('andy','baby');
+    // let newStr=str.replace(/andy/,'baby');
+    // console.log(newStr);
+
+    let text=document.querySelector('textarea');
+    let btn=document.querySelector('button');
+    let div=document.querySelector('div');
+    btn.addEventListener('click',function(){
+        /* 
+            g:全局匹配
+            i:忽略大小写
+            gi:全局匹配+忽略大小写
+        */
+        div.innerHTML=text.value.replace(/激情/g,'**');
+        
+    })
+</script>

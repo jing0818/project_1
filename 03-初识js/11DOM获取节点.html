@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function text01(){
+            //直接获取节点：
+                //第一种：通过id获取节点
+                var s=document.getElementById("username");
+                //alert(s);//[object HTMLInputElement]  获取的是一个对象
+
+                //第二种：通过name获取节点
+                var t=document.getElementsByName('fav');//获取的是一个集合
+                // alert(t);//[object NodeList] 获取到一个集合
+                // alert(t.length);//集合的长度
+                // for(i=0;i<t.length;i++){
+                //     alert(t[i].value);//获取name的值
+                // }
+                //第三种：通过标签获取节点
+                var j=document.getElementsByTagName('input');
+                alert(j);
+                alert(j.length);
+                for(var v of j){
+                    alert(v.value);
+                }
+        }
+
+        function text02(){
+            //简介获取
+            //通过父节点获取子节点
+            var str=document.getElementById("form1");
+            //alert(str.childNodes.length);
+            //alert(str.childNodes[3].value);
+
+            //通过子节点获取父节点
+            var str2=document.getElementById("password");
+            // alert(str2.parentNode.id);
+
+            //通过兄弟节点获取兄弟节点
+            var str3=document.getElementById("password");
+            console.log(str3.nextElementSibling);//获取下一个兄弟节点
+            console.log(str3.nextSibling);//获取下一个兄弟节点
+
+            // alert(str3.previousElementSibling.value);//获取上一个兄弟节点
+        }
+
+        function text03(){
+            /*  节点类型：
+                1：文本节点：标签跟标签之间的空白  document.getElementById('username').nextElementSibling.nodeType 获取文本节点，返回的是  3
+                2：元素节点  document.getElementById('username').nodeType  获取元素节点 返回的是  1
+                3：属性节点  document.getElementById('username').attributes['name'].nodeType  获取元素节点 返回的是  2
+             */
+
+            alert(document.getElementById('form1').childNodes.length);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="测试按钮" onclick="text02()">
+    <form id="form1" action='案例.html'>
+        <input type="text" id="username" name="username">
+        <input type="password" id="password" name="password">
+        爱好：
+        <input type="checkbox" name='fav' value="游泳">游泳
+        <input type="checkbox" name='fav' value="跑步">跑步
+        <input type="checkbox" name='fav' value="骑行">骑行
+        <input type="submit" value="提交" id='s' >
+    </form>
+</body>
+</html>

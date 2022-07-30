@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 模拟获取  用户数据  订单数据  商品数据
+
+    function getUsers(){
+        setTimeout(()=>{
+            let data='用户数据';
+            iterator.next(data);
+        },1000)
+    }
+    function getOrders(user){
+        setTimeout(()=>{
+            console.log("订单获取到用户数据");
+            let data='订单数据';
+            iterator.next();
+        },1000)
+    }
+    function getShopping(){
+        setTimeout(()=>{
+            let data='商品数据';
+            iterator.next();
+        },1000)
+    }
+
+    function * gen(){
+        let user=yield getUsers();
+        console.log(user);
+        yield getOrders(user);
+        yield getShopping();
+    }
+
+    let iterator=gen();
+    iterator.next();
+    
+</script>

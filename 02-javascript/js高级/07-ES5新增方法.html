@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    /* 
+        数组方法
+            迭代方法：forEach(),map(),filter(),some(),every();
+    */
+
+   let arr=[1,2,3];
+//    遍历数组
+   arr.forEach((value,index,arr)=>{
+    console.log(value,index,arr);
+   })
+
+   // filter()方法创建一个新的数组，用来筛选的
+   let arr2=arr.filter((value,index)=>{
+        return value>1;
+   })
+   console.log(arr2);
+
+    // some()用于检测数组总元素是否满足指定条件，如果满足返回true，不满足返回false
+    let flag=arr.some((value,index)=>{
+        return value>=3;
+    })
+    console.log(flag);
+
+    // 1:filter也是查找满足条件的元素 返回的时一个数组 而且是把所有满足条件的元素返回回来
+    // 2: some也是查找满足条件的元素是否存在 返回的是一个布尔值 如果查找到第一个满足条件的元素就终止循环
+
+    
+    /* 
+        对象方法
+        Object.defineProperty(obj,prop,descriptor) 定义对象中新属性或修改原有的属性
+
+        obj:必需，目标对象
+        prop:必需，需定义或修改的属性的名字
+        descriptor:必需，目标属性所拥有的特性
+    */
+    let obj={
+        id:1,
+        pname:'小米',
+        price:1999
+    };
+    // 以前的对象添加和修改属性的方式
+    // obj.num=1000;
+    // obj.price=99;
+
+    // Object.defineProperty(obj,prop,descriptor)  定义新属性或修改原有的属性
+    /* 
+        第三个参数descriptor说明：以对象形式{}书写
+        value:设置属性的值 默认为undefined
+        writable:值是否可以重写。true|false 默认为false
+        enumerable:目标属性是否可以被枚举。
+        configurable:目标属性是否可以被删除或是否可以再次修改特性
+    */
+    Object.defineProperty(obj,'num',{
+        value:2000
+    })
+    Object.defineProperty(obj,'id',{
+        writable:false,
+    })
+    obj.id=20;
+    console.log(obj);
+
+</script>

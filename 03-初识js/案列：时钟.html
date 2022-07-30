@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            clearInterval():  取消由 setInterval() 设置的 timeout。 
+            clearInterval(): 方法的参数必须由setINterval()返回的id值
+            要使用clearInterval()方法，在创建执行定时操作时要使用全局变量；
+        */
+
+
+        //获得时钟的两种方式
+        var id=0;
+        function s(){
+            id=window.setInterval(function(){
+                var str=document.getElementById("time");
+                var date=new Date();
+                var fen=date.getMinutes();
+
+                if(date.getMinutes().toString.length===1){
+                    fen='0'+date.getMinutes();   
+                }                
+                var time2=date.getFullYear()+"年"+date.getMonth()+"月"+date.getDate()+"日"+date.getHours()+"时"+fen+"分"+date.getSeconds()+"秒";
+               
+                str.innerHTML=time2;
+            },1);
+        }
+        function sss(){
+            var date=new Date();
+            var time2=date.getFullYear()+"年"+date.getMonth()+"月"+date.getDate()+"日"+date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒";
+            document.getElementById("time").innerHTML=time2;
+            window.setTimeout(sss,1000);
+        }
+        function stop(){
+            window.clearInterval(id);
+        }
+        function start(){
+            s();
+        }
+    </script>
+</head>
+<body onload="s()">
+    <div id="time"></div>
+    <input type="button" value="暂停" onclick="stop()">
+    <input type="button" value="继续" onclick="start()">
+</body>
+</html>

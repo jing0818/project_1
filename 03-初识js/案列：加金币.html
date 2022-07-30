@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加金币</title>
+</head>
+<body>
+    <input type="button" value="加金币" onclick="jjq()">
+    <div id="mydiv"></div>
+    
+</body>
+</html>
+<script>
+    function jjq(){
+
+        //创建一个图片
+        var img=document.createElement('img');
+        img.src='img/2.png';
+
+        //将图片放入div中
+        var mydiv=document.getElementById('mydiv');
+        mydiv.appendChild(img);
+
+        //设置边距
+        img.style.width='30px';
+        img.style.position='absolute';
+        img.style.top='200px';
+        img.style.left='200px';
+
+        //设置图片的饱和度
+        img.style.opacity=1;
+
+        //一边往上走一边消失
+        var id=setInterval(function(){
+            img.style.top=(img.offsetTop-2)+'px';
+            img.style.opacity-=0.01;
+            console.log('aaa');
+            if(img.style.opacity<=0){
+                clearInterval(id);
+            }
+        
+        },20);
+    }
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid{
+            /* 开启grid布局 */
+            display: grid;
+            /* 设置宽度 也可以使用px  */
+            grid-template-columns: 1fr 10fr 1fr;
+            /* 设置每个盒子之间的行间距，不包括外层  */
+            /* column-gap: 25px; */
+            /* 设置每个盒子之间的列间距，不包括外层 */
+            /* row-gap: 10px; */
+            /* 同时设置行间距和列间距 设置两个值 第一个为列间距，第二个为行间距 */
+            /* gap: 20px 10px; */
+        }
+
+        .one{
+            background-color: pink;
+        }
+        .two{
+            background-color: yellow;
+        }
+        .three{
+            background-color: red;
+        }
+        .four{
+            background-color: black;
+        }
+        .five{
+            background-color: blue;
+        }
+        .six{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="one">
+            one
+        </div>
+        <div class="two">
+            two
+        </div>
+        <div class="three">
+            three
+        </div>
+        <div class="four">
+            four
+        </div>
+        <div class="five">
+            five
+        </div>
+        <div class="six">
+            six
+        </div>
+    </div>
+</body>
+</html>

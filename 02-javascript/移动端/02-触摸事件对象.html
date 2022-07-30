@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="one two six"></div>
+</body>
+</html>
+<script>
+    /* 
+        触摸列表            说明
+        touches             正在触摸屏幕的所以手指的一个列表
+        targetTouches       正在触摸当前BOM元素上的手指的一个列表
+        changedTouches      手指状态发生了改变的列表，从无到有，从有到无变化
+    */
+   var div=document.querySelector('div');
+   var x=0;
+   var y=0;
+   var l=0;
+   var t=0;
+   div.addEventListener('touchstart',function(e){
+        x=e.touches[0].pageX;
+        y=e.touches[0].pageY;
+
+        l=this.offsetLeft;
+        t=this.offsetTop;
+        console.log(123);
+   })
+   div.addEventListener('touchmove',function(e){
+        e.preventDefault();
+        console.log(123);
+        moveX=e.touches[0].pageX-x;
+        moveY=e.touches[0].pageY-y;
+
+        this.style.left=l+moveX+'px';
+        this.style.top=t+moveY+'px';
+        
+   })
+//    返回元素所有类名
+//    console.log(div.classList);
+</script>

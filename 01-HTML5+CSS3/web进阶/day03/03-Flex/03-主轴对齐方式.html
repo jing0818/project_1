@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主轴对齐方式</title>
+    <style>
+
+        /* 
+            修改主轴对齐方式属性：justify-content
+
+            属性值                  作用
+            flex-start              默认值，起点开始依次排列
+            flex-end                终点开始依次排列
+            center                  沿主轴居中排列
+            space-around            弹性盒子沿主轴均匀排列，空白间距均分在弹性盒子两侧
+            space-between           弹性盒子沿主轴均匀排列，空白间距均分在相邻盒子两侧
+            space-evenly            弹性盒子沿主轴均匀排列，弹性盒子与容器之间间距相等
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            /* 间距加载子级的两侧 */
+            /* 视觉效果：子级之间的距离是父级两头距离的2倍 */
+            justify-content: space-around;
+            height: 200px;
+            margin: auto;
+            border: 1px solid #000;
+        }
+        
+        .box div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>

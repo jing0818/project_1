@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color: yellowgreen;
+            width: 200px;
+            height: 200px;
+            margin-left: 200px;
+        }
+    </style>
+    <script>
+
+        /* 
+            removeAttribute  移除属性
+        */ 
+        
+
+        function text01(){
+            /*
+                setAttribute()：可以重新给属性赋值，或设置一个新的属性
+            */
+
+            var str=document.getElementsByName('uname')[0];
+            alert(str.value);
+            str.setAttribute('id','sb');
+            alert(str.id);
+        }
+        //style设置样式优先级高于class
+        function text02(){
+            //操纵样式
+            var str=document.getElementById("div1");
+            str.style.width="500px";
+            str.style.height="200px";
+            str.style.backgroundColor="red";
+        }
+        function text03(){
+            //操纵样式
+            var str=document.getElementById("div1");
+            str.className='div1';
+        }
+        
+        function text04(){
+            //操纵内容
+            var str=document.getElementById('div1');
+            s="<img src='img/1.png'>";
+            str.innerHTML=s;
+            str.innerText=s;
+            /*
+                innerHTML：可以解析到字符串里面的html代码
+                innerText：原样输出效果
+            */
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="设计属性" onclick="text01()">
+    <input type="button" value="改变样式" onclick="text02()">
+    <input type="button" value="设计样式" onclick="text03()">
+    <input type="button" value="设计内容" onclick="text04()">
+    <input type="text" id='name' name='uname' >
+    <div id="div1"></div>
+</body>
+</html>

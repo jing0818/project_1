@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            后代选择器：
+                根据HTML标签的嵌套关系，选中父元素后代中满足条件的元素
+                包含所有子代，孙代 相当于：儿子，孙子，重孙子
+        */
+        div p{
+            color: red;
+        }
+
+        /* 
+            子代选择器：
+                根据HTML标签的嵌套关系，选中父元素子代中满足条件的元素
+                只寻找子代，儿子
+        */
+        div > p{
+            color: yellow;
+        }
+
+        /* 
+            并集选择器：
+                多个标签用于一起
+        */
+        p,
+        div,
+        span{
+            color: red;
+        }
+
+        /* 
+            交集选择器：
+
+        */
+        p.box{
+            color: red;
+        }
+
+        /* 
+            hover伪类选择器：
+                作用：选中鼠标悬停在元素上的状态，设置样式
+                选择器语法：选择器:hover{css}
+        */
+        .mydiv:hover{
+            color: pink;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+   <p class="box">这是一个p标签：box</p>
+   <p>pppppppppp</p>
+   <div class="box">
+       <p>这是div里面的p标签：box</p>
+   </div>
+
+   <div class="mydiv">
+       这是一个普通的div
+   </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>添加音乐</h1>
+    <br>
+    <div id="mydiv">
+        <input type="checkbox" name='music'>你瞒我瞒<br>
+        <input type="checkbox" name='music'>必杀技<br>
+        <input type="checkbox" name='music'>无赖<br>
+        <input type="checkbox" name='music'>吴哥窟<br>
+        <input type="checkbox" name='music'>单车
+    </div>
+    <input type="button" value="全选" onclick="an('全选')">&nbsp;&nbsp;<input type="button" value="反选" onclick="an('反选')">&nbsp;&nbsp;<input type="button" value="全不选" onclick="an('全不选')">
+</body>
+</html>
+<script>
+    function an(str){
+        var check=document.getElementsByName('music');
+        var node=check.childNodes;
+        for(i=0;i<check.length;i++){
+            if(str=='全选'){
+                check[i].checked=true;    
+            }else if(str=='全不选'){
+                check[i].checked=false;    
+            }if(str=='反选'){
+                check[i].checked=!check[i].checked;    
+            }
+        }
+    }
+</script>

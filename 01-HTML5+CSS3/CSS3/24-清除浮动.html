@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        清除浮动的方法
+                1：直接设置父元素的高度
+                2：额外标签法
+                        2.1：在父元素内容的最后添加一个块级元素
+                        2.2：给添加的块级元素设置clear:both
+
+
+     -->
+     <style>
+         .clearfix{
+             clear:both
+         }
+
+         /* 
+            单伪元素清除法
+         */
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+
+        /* 
+            双伪元素清除法
+        */
+        .clearfix::before,
+        .clearfix::after{
+            content: "";
+            display: table;
+        }
+        .clearfix::after{
+            clear: both;
+        }
+
+        /* 
+            第三种方法
+                直接给父类元素加上：
+                    overflow:hidden
+        */
+
+     </style>
+</head>
+<body>
+    
+</body>
+</html>

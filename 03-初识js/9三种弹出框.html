@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            alert():普通弹出框
+
+            confirm():确定框，让你再次确认信息，返回值是true，代表是确定的效果，返回值为false，代表是取消的意思
+
+            prompt():问答框
+        */
+        function text01(){
+            alert('alert弹框');
+        }
+        function text02(){
+            var b=confirm("确定要删除？");
+            alert(b);
+        }
+        function text03(){
+            prompt('请输入你的用户名');
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="alert" onclick="text01()">
+    <input type="button" value="确定框" onclick="text02()">
+    <input type="button" value="对话框" onclick="text03()">
+</body>
+</html>

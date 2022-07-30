@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+<script>
+    /* 
+        classList属性
+        该属性用于在元素中添加，移除及切换css类
+    */
+    var div=document.querySelector('div');
+    // 获取该元素所以的类名
+    // console.log(div.classList);
+    // 新增一个类名 是在最后添加类名，不能覆盖类名
+    div.classList.add('one');
+    // 删除类名
+    div.classList.remove('one');
+    // 切换类  原来有就删除，没有就添加
+    div.classList.toggle('one');
+    div.addEventListener('click',function(){
+        alert(123);
+    })
+</script>

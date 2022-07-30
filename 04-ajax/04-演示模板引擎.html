@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 在window全局，多一个函数，叫做 template('模板的Id',需要渲染的数据对象) -->
+    <script src="./template-web.js"></script>
+    <script src="./jquery3.6.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+    <!-- 3：定义模板 -->
+    <!-- 3.1：模板的HTML结构，必须定义到script中 -->
+    <script type="text/html" id="tpl-user">
+        <h1>{{name}}</h1>
+    </script>
+
+<script>
+
+    // 2：定义需要渲染的数据
+    var data={name:'zs'}
+
+    // 4:调用template函数
+    let htmlStr=template("tpl-user",data);
+    console.log(htmlStr);
+    document.body.innerHTML+=htmlStr;
+</script>

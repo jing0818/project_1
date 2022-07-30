@@ -1,0 +1,483 @@
+@import "./base.less";
+
+// 版心
+.wrapper{
+    width: 1200px;
+    margin: 0  auto;
+}
+
+//头部
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color:#f5f6f6;
+
+    .wrapper{
+        display: flex;
+        align-items: center;
+        height: 95px;
+        
+        img{
+            
+            width: 450px;
+        }
+
+        .nav{
+            flex: 1;
+            ul{
+                display: flex;
+                justify-content: flex-end;
+                padding-left: 20px;
+
+                li{
+                    height: 50px;
+
+                    &:hover{
+                        background-color:skyblue;
+                    }
+                }
+                
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    line-height: 50px;
+                    padding: 0 15px;
+                    font-size: 14px;
+                    color: #333333;
+                }
+            }
+        }
+    }
+}
+
+
+//轮播图
+.banner{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 500px;
+    background-image: url(../image/JAVAkecheng（shoujiban）2-02-172020-093933.jpg);
+    background-size: 100%;
+
+    .left{
+        position: relative;
+
+        .glyphicon-chevron-left{
+            position: absolute;
+            right: 40px;
+            font-size: 30px;
+            line-height: 500px;
+            color: #ffffff;
+            // background-color: red;
+        }
+        
+        &:hover{
+            background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+        }
+    }
+
+    .right{
+        position: relative;
+
+        .glyphicon-chevron-right{
+            position: absolute;
+            left: 20px;
+            font-size: 30px;
+            line-height: 500px;
+            color: #ffffff;
+        }
+       
+
+        &:hover{
+            background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+        }
+    }
+
+
+
+    a{
+        width: 200px;
+        height: 100%;
+
+        span{
+        }
+    }
+}
+
+
+// 专业介绍
+.introduce{
+    padding: 30px 0;
+
+    >h4{
+        font-size: 25px;
+        text-align: center;
+    }
+    >p{
+        text-align: center;
+    }
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        li{
+            width: 270px;
+
+            a{
+                span{
+                    display: block;
+                    text-align: center;
+                    background-color: #f0f0f0;
+                    color: #333333;
+                    height: 45px;
+                    line-height: 45px;
+                }
+            }
+
+            >span{
+                display: block;
+                margin: 10px;
+                font-size: 12px;
+                text-align: center;
+                text-indent: 1em;
+            }
+
+            &:hover{
+                box-shadow: 0 0 30px #d0d0d0;
+            }
+        }
+    }
+}
+
+// 学校介绍
+.school{
+    display: flex;
+    background-image: url(../image/section1_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 700px;
+    // margin-bottom: 10000px;
+
+    .school-top{
+        display: flex;
+        height: 400px;
+       
+
+        .text{
+            position: relative;
+            padding-top:40px;
+            padding-left: 20px;
+            color: #ffffff;
+
+            p{
+                line-height: 30px;
+                padding-bottom:10px ;
+                font-size: 12px;
+            }
+
+            a{
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                padding: 5px 10px;
+                background: #fff;
+                color: #666;
+            }
+        }
+
+    }
+
+    .school-bottom{
+        ul{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+           li{
+                padding: 20px 10px;
+                width: 290px;
+                background-color: #fff;
+
+                .glyphicon-floppy-remove{
+                    font-size: 50px;
+                    color: #1c6bb4;
+                }
+           }
+        }
+    }
+}
+
+// 薪资表
+.pay{
+    // padding-top: 50px;
+    // margin-bottom: 200px;
+    height: 650px;
+   
+    .bjt{
+        padding-top: 30px;
+        height: 650px;
+        background-image: url(../image/xz_bg.jpg);
+        background-size: cover;
+
+        table{
+            width: 100%;
+            
+            tbody{
+                // animation: update 4s infinite;
+                overflow: hidden;
+            }
+
+            h3{
+                text-align: center;
+                color: #333333;
+            }
+
+            th{
+                text-align: center;
+                background-color: #79c8f5;
+            }
+            tr{
+                height: 40px;
+                border-top: 2px solid #fff;
+                overflow: hidden;
+                background-color: #f4f4f4;
+
+                td{
+                    overflow: hidden;
+                    
+                    text-align: center;
+
+                    &:nth-child(7){
+                        background-color: #79c8f5;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+//实战项目
+.project{
+    padding-top: 20px;
+    background-image: url(../image/col10_bg.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 750px;
+
+    .txt{
+        color: #ffffff;
+        text-align: center;
+
+        h3{
+            font-size: 30px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+
+    .main{
+        display: flex;
+
+        li{
+            width: 566px;
+            height: 500px;
+        }
+
+        .js{
+          
+            flex: 1;
+            padding-left: 20px;
+            a{
+                display: flex;
+                margin-top: 20px;
+                width: 100%;
+                span{
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    text-align: center;
+                    line-height: 80px;
+                    font-size: 30px;
+                }
+                div{
+                    padding-left:10px ;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+}
+
+
+//师资力量
+.teacher{
+    padding-top: 30px;
+    // margin-bottom: 200px;
+
+    .teacher-top{
+        // position: relative;
+        display: flex;
+        justify-content: center;
+        .pp{
+            width: 330px;
+            height: 440px;
+        }
+
+        .name{
+            margin: 80px 0 0 20px;
+            width: 163px;
+            height: 163px;
+            background-image: url(../image/a_team_bg.png);
+            line-height: 163px;
+            text-align: center;
+            font-size: 30px;
+            color: #ffffff;
+        }
+
+        .a_team_cir,.a_team_cir1{
+            width: 395px;
+            height: 395px;
+            border-radius: 50%;
+        }
+
+        .a_team_cir{
+            // position: absolute;
+            position: relative;
+            // left: 30px;
+            left: -18px;
+            padding: 12px;
+            border: 2px solid #cacaca;
+            
+        }
+        .a_team_cir1{
+            display: table;
+            background: #f5f5f5;
+            text-align: center;
+            vertical-align: middle;
+            
+            p{
+                display: table-cell;
+                vertical-align: middle;
+                line-height: 28px;
+                padding: 0px 0px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .teacher-bottom{
+        padding-top:40px;
+        ul{
+            display: flex;
+            justify-content: center;
+            li{
+                width: 116px;
+                height: 155px;
+                margin-right: 10px;
+            }
+        }
+        
+    }
+    
+}
+
+// 校园环境
+.environment{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-image: url(../image/con6_bg.jpg);
+
+    .top{
+        text-align: center;
+
+        P{
+            position: relative;
+            font-size: 12px;
+            a{
+                position: absolute;
+                right: 0;
+                color: #333;
+            }
+        }
+    }
+
+    .class{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        transition: all .5s;
+        
+        .i{
+            overflow: hidden;
+        }
+        a{
+            width: 24%;
+
+            &:hover{
+                img{
+                    transform: scale(1.3);
+                }
+
+                p{
+                    background-color: skyblue;
+                }
+            }
+
+            p{
+                padding: 10px 0;
+                background-color: #444444;
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// 校园活动
+.activity{
+    margin-bottom: 200px;
+    padding-top: 30px;
+    .top{
+
+        text-align: center;
+
+    
+        h4{
+            font-weight: bold;
+        }
+       p{
+        position: relative;
+        font-size: 12px;
+        
+        a{
+            position: absolute;
+            right: 0;
+            color: #333;
+        }
+       }
+    }
+}
+
+//动画
+@keyframes update{
+    to{
+        transform: translateY(-400px);
+    }
+}
+
+@keyframes fangda{
+    to{
+        transform: scale(1.2);
+    }
+}

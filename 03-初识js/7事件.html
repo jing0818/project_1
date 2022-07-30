@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function verify(){
+            var username=document.getElementById('username').value;
+            var password=document.getElementById('password').value;
+            alert(username);
+            if(username=='' || password==''){
+                alert('用户名或密码为空，请输入账号或密码');
+                return false;
+            }else return true;
+        }
+    </script>
+</head>
+
+<!-- 
+    onclick：鼠标点击某个对象
+    ondblclick：鼠标双击某个对象
+    onblur：元素失去焦点
+    onfocus：元素获得焦点
+    onchange：用户改变域的内容
+    onsubmit：提交按钮被点击
+    onreset：重置按钮被点击
+    onmouseover：鼠标被移到某元素之上
+    onmouseout：鼠标从某元素移开
+    onkeydown：某个键盘的键被按下
+    onkeyup：某个键盘的键被松开
+    onkeypress:某个键盘的键被按下 但不识别功能键 比如ctrl shift 箭头等
+    onload：某个页面或图像被加载完成
+
+    三个键盘执行顺序：
+        keydown -- keypress -- keyup
+ -->
+
+<body onload="alert('页面被加载了')">
+    <!-- 单击事件 -->
+    <input type="button" value="单击事件" onclick="alert('单击事件')"/>
+    <!-- 双击事件 -->
+    <input type="button" value="双击事件" ondblclick="alert('双击事件')" />
+    <!-- 获取焦点事件 -->
+    <input type="text"  onfocus="alert('获取焦点')" />
+    <!-- 失去焦点事件 -->
+    <input type="text" onblur="alert('失去焦点')" />
+    <!-- 改变事件 -->
+    <select onchange="alert('改变了选项！！！')">
+        <option>北京市</option>
+        <option>上海市</option>
+        <option>广州市</option>
+        <option>深圳市</option>
+    </select>
+
+    <!-- 鼠标移到某元素事件 -->
+    <!-- <div style="width: 50px; height: 50px; border-color: yellowgreen; background-color: yellowgreen;" onmousemove="alert('显死了')"></div><br> -->
+
+    <!-- 鼠标移除某元素事件 -->
+    <!-- <div style="width: 50px; height: 50px; border-color: yellowgreen; background-color: yellowgreen;" onmouseout="alert('你洪起你满满上陡坡')"></div> -->
+
+    <!-- 键盘抬起事件 -->
+    <input type="text" onkeyup="alert('键盘抬起了')">
+
+    <!-- 键盘按下事件 -->
+    <input type="text" onkeydown="alert('键盘落下了')">
+
+    <!-- 提交事件：当返回值为true可以提交，为false时无法提交 -->
+    <!-- 重置事件：当返回值为true可以重置，为false时无法重置 -->
+    <form action="a.html" onsubmit="document.write(verify())" onreset="false">
+        <input type="text" name="username" id="username">
+        <input type="password"  name="password" id="password">
+        <input type="submit">
+        <input type="reset">
+    </form>
+
+    <input type="button" value="123" onclick="jsj(this)">
+
+
+
+</body>
+</html>

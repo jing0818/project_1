@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <script src="./jquery3.6.js"></script>
+    <script src="./bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <input type="file" name="file1" id="">
+    <button>上传文件</button>
+    <div class="progress" style="display: none; width: 500px; margin: 15px 10px;">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+        
+        </div>
+      </div>
+    <br>
+    <img src="" id="img" width="800">
+</body>
+
+</html>
+<script>
+    /* 
+        新版本的XMLHttpRequest对象中，可以通过监听xhr.upload.onprogress事件，来获取文件的上传进度。
+    */
+    //    语法格式如下：
+
+    let btn = document.querySelector('button');
+    btn.addEventListener('click', function () {
+        let file = document.querySelector('input[type=file]').files;
+        console.log(file);
+        if (file.length <= 0) {
+            return alert("请选择文件");
+        }
+        let fd = new FormData();
+        fd.append('avatar', file[0]);
+
+        // 创建xhr对象
+        let xhr = new XMLHttpRequest();
+
+        // 监听xhr.upload的onprogress事件
+        xhr.upload.onprogress = function (e) {
+            // e.lengthComputable 是一个布尔值，表示当前上传的资源是否具有可计算的长度
+            if (e.lengthComputable) {
+                // e.loaded 以传输的字节
+                // e.total 需传输的总字节
+                let percentComplete = Math.ceil((e.loaded / e.total) * 100);
+                console.log(percentComplete);
+                let progress=document.querySelector('.progress .progress-bar');
+                progress.parentNode.style.display='block';
+                progress.style.width=percentComplete+"%";
+                progress.innerHTML=percentComplete+"%";
+            }
+        }
+
+        // 监听上传完成的事件
+        xhr.upload.onload=function(){
+            // progress-bar progress-bar-success
+            $('.progress .progress-bar').removeClass().addClass('progress-bar progress-bar-success');
+
+        
+        }
+
+
+        xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar');
+        xhr.send(fd);
+        xhr.onreadystatechange = function () {
+            let data = JSON.parse(xhr.responseText);
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(data);
+                document.querySelector('img').src = 'http://www.liulongbin.top:3006' + data.url;
+            } else {
+                console.log(data.message);
+            }
+        }
+
+
+
+    })
+
+
+
+</script>

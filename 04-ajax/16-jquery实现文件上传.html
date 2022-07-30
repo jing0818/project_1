@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery3.6.js"></script>
+</head>
+
+<body>
+    <input type="file" id="file1">
+    <button>上传</button>
+    <br>
+    <img src="./images/loading.gif" alt="" style="display: none;" id="load">
+</body>
+
+</html>
+<script>
+    /* 
+        ajaxStart(callback)
+        ajax请求开始时，执行ajaxStart函数，可以在ajaxStart的callback中显示loading效果
+
+        注意：$(document).ajaxStart()函数会监听当前文档内所有的ajax请求
+
+        自jquery版本1.8起，该方法只能被附件到文档
+        $(document).ajaxStart(function(){
+            $('#loading').show();
+        })
+    */
+
+    // 监听到ajax请求发起了
+    $(document).ajaxStart(function (e) {
+        console.log(e);
+        $('#load').show();
+    })
+
+    $(document).ajaxStop(function () {
+
+        $('#load').hide();
+    })
+
+
+    $('button').click(function () {
+        let file = $('#file1')[0].files;
+        if (file.length <= 0) {
+            return alert('请选择图片后在上传！');
+        }
+
+        let fd = new FormData();
+        fd.append('avatar', file[0]);
+
+        $.ajax({
+            method: "POST",
+            url: "http://www.liulongbin.top:3006/api/upload/avatar",
+            data: fd,
+            // 不修改 Content-Type属性，使用FormData默认的Content-Type值
+            contentType: false,
+            // 不对 FormData 中的数据进行url编码，而是将FormData数据原样发送到服务器
+            processData: false,
+            success: function (res) {
+                console.log(res);
+            }
+        })
+    })
+</script>

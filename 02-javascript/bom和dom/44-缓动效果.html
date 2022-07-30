@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    var div=document.querySelector('div');
+
+    function aniter(obj,tranger){
+        var s=30;
+        obj.timer=setInterval(function(){
+            var a=(tranger-obj.offsetLeft)/10;
+            if(obj.offsetLeft>=tranger){
+                clearInterval(obj.timer);
+            }
+            
+            console.log(parseInt(a));
+            console.log(obj.offsetLeft);
+            div.style.left=obj.offsetLeft+Math.ceil(a)+'px';
+        },200);
+    }
+    aniter(div,800)
+</script>

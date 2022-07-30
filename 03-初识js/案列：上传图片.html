@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>上传图片</h1>
+    <input type="button" value="上传" onclick="sc()"><br><br>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>
+<script>
+    /*
+    function sc(){
+        var str=document.getElementById("mydiv");
+        str.innerHTML+="<div><input type='file' />  <input type='button' value='删除' onclick='del(this)' /><br></div>";
+        
+    }
+    function del(obj){
+        var div01=obj.parentNode;
+        var mydiv=document.getElementById('mydiv');
+        mydiv.removeChild(div01);
+    }
+    */
+   
+    function sc(){
+
+        //创建属性节点
+        var input=document.createElement("input");
+        input.type='file';
+
+        //创建删除节点
+        var anniu=document.createElement("input");
+        anniu.type='button';
+        anniu.value='删除';
+        anniu.onclick=function(){
+            mydiv.removeChild(input);
+            mydiv.removeChild(anniu);
+            mydiv.removeChild(br);
+        };
+
+        //创建换行节点
+        var br=document.createElement("br");
+
+        //给mydiv增加子节点
+        var mydiv=document.getElementById('mydiv');
+        mydiv.appendChild(input);
+        mydiv.appendChild(anniu);
+        mydiv.appendChild(br);
+
+    }
+</script>

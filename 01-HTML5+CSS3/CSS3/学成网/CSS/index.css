@@ -1,0 +1,311 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* 内建模式 */
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f3f5f7;
+}
+
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.top{
+    height: 42px;
+    margin-top: 40px;
+}
+li{
+    list-style: none;
+}
+
+.top a{
+    float: left;
+}
+
+.nav{
+    float: left;
+    height: 42px;
+    margin-left: 70px;
+}
+
+.nav li{
+    float: left;
+    margin-right: 20px;
+}
+
+.nav li a{
+    font-size: 18px;
+    color: #050505;
+    padding: 0 9px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.nav li:hover{
+    border-bottom: 2px ridge #00a4ff;
+}
+
+.sousu{
+    float: left;
+    margin-left: 67px;
+    height: 42px;
+    line-height: 42px;
+    border: 1px ridge #00a4ff;
+}
+
+.type01{
+    float: left;
+    height: 40px;
+    width: 360px;
+    outline-color:#00a4ff
+}
+
+.sousu img{
+    float: left;
+    height: 40px;
+    width: 50px;
+}
+
+.user{
+    float: left;
+    margin-left: 63px;
+    height: 42px;
+    line-height: 42px;
+}
+
+.user img{
+    vertical-align: middle;
+}
+
+.center{
+    margin-top: 3px;
+    height: 420px;
+    background-size: 100%;
+    
+    background-image: url(../images/banner2.png);
+}
+
+.center-ul{
+    
+    float: left;
+    margin-left: -194px;
+    height: 420px;
+    width: 190px;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+
+.center-ul li{
+    height: 52px;
+    padding:20px 0 0 10px ;
+    
+}
+
+
+.center-ul a{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.center-ul a:hover{
+    color: #00a4ff;
+}
+
+.center-ul a::after{
+    content: ">";
+    display: inline-block;
+    margin-left: 80px;
+}
+
+.kechenbiao{
+    float: right;
+    margin-top: 67px;
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+}
+
+.kechenbiao h2{
+    height: 48px;
+    line-height: 48px;
+    background-color: #9bceea;
+    color: #fff;
+    text-align: center;
+}
+
+.content{
+    padding: 0 18px;
+}
+
+.content dl{
+    height: 67px;
+    border-bottom: 1px solid #efefef;
+    padding-top: 20px;
+}
+
+.content dt{
+    font-size: 15px;
+    color: #7d7d7d;
+}
+
+.content dd{
+    font-size: 12px;
+    color: #bdbdbd;
+}
+
+.kechenbiao-last{
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    margin: 5px 0 0 15px;
+    padding-top: 9px ;
+    border: 1px solid #22b0ff;
+}
+
+.kechenbiao-last a{
+    color: #00a4ff;
+}
+
+.jingpintuijian{
+    margin-top: 10px;
+    height: 60px;
+}
+
+.jingpintuijian h2{
+    float: left;
+    display: inline-block;
+    height: 60px;
+    width: 134px;
+    font-size: 16px;
+    line-height: 60px;
+    text-align: center;
+    border-right: 1px solid #bfbfbf;
+    color: #00a4ff;
+    
+    
+}
+
+.jingpintuijian ul{
+    display: inline-block;
+}
+
+.jingpintuijian li{
+    float: left;
+    height: 60px;
+    width: 134px;
+    line-height: 60px;
+    text-align: center;
+    border-right: 1px solid #bfbfbf;
+    
+}
+
+.jingpintuijian a{
+    color: #050505;
+}
+
+.jingpintuijian >a{
+    float: right;
+    display: inline-block;
+    height: 60px;
+    width: 134px;
+    padding: 20px 0 0 40px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.jingpinneirong{
+    margin-top: 30px;
+    height: 30px;
+}
+
+.jingpinneirong h2{
+    display: inline-block;
+    padding-top: 10px;
+    color: #494949;
+    font-size: 16px;
+}
+
+.jingpinneirong a{
+    float: right;
+    display: inline-block;
+    padding: 10px 29px 0 0;
+    font-size: 14px;
+    color: #a5a5a5;
+}
+
+.shipin{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    height: 570px;
+}
+
+.shipin li{
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 15px;
+    width: 228px;
+    height: 270px;
+}
+
+.shipin ul li a{
+    position: relative;
+}
+
+.shipin ul li .s{
+    position: absolute;
+    right: 2px;
+}
+
+
+.shipin li:nth-child(5n){
+    margin-right: 0;
+}
+
+.bottom{
+    background-color: #fff;
+    height: 415px;
+}
+
+.left{
+    float: left;
+    padding-top: 30px;
+}
+
+.left a{
+    display: inline-block;
+    margin-top: 15px;
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #22b0ff;
+    color: #00a4ff
+}
+
+.right{
+    float: right;
+}
+
+.right dl{
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+.right dt{
+    margin-bottom: 10px;
+}
+.left span{
+    font-size: 14px;
+}

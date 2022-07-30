@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            CSS书写顺序：浏览器执行效率更高
+               1：浮动/display
+               2: 盒子模型 margin border padding 宽度高度背景色
+               3：文字样式
+
+        */
+        .top{
+            height: 40px;
+            background-color: #333333;
+        }
+        .one{
+            height: 100px;
+            width: 1226px;
+            background-color: #ffc0cb;
+            margin: 0 auto;
+        }
+        .two{
+            height: 460px;
+            width: 1226px;
+            margin: 0 auto;
+            
+        }
+
+        .div01{
+            height: 460px;
+            width: 234px;
+            background-color:#ffa500;
+            float: left;
+        }
+
+        .div02{
+            height: 460px;
+            width: 992px;
+            background-color: #87ceeb;
+            float:right;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="one"></div>
+    <div class="two">
+        <div class="div01"></div>
+        <div class="div02"></div>
+    </div>
+    
+</body>
+</html>

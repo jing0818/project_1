@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            语法：transform:rotate(角度);
+            注意：角度单位是：deg
+
+            技巧：取值正负均可
+
+            旋转效果必须要配合过渡，没有过渡效果实现不了
+        */
+
+        div{
+            width: 500px;
+            height: 373px;
+            background-image: url(./image/傻der.jpg);
+            background-size: 100%;
+            border: 3px solid pink;
+            margin: 200px auto;
+            transition: all 5s;
+            transform-origin: 40px 40px;
+        }
+
+        div:hover{
+            
+            transform: rotate(720deg);
+            
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../04-ajax/jquery3.6.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const p=new Promise(function(resolve,reject){
+        $.ajax({
+            url:"https://api.apiopen.top/getJoke",
+            success:function(data){
+                console.log('成功了');
+                resolve(data);
+            },
+            error:function(error){
+                console.log('失败了');
+                // reject('ajax=='+error);
+            }
+        })
+    })
+
+    p.then(function(value){
+        console.log(value);
+    },function(reason){
+        console.log("真的失败了");
+        console.log(reason);
+    })
+</script>

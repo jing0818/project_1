@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #angel {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/angel.gif" id="angel" />
+</body>
+
+</html>
+<script>
+    let flag=true;
+    document.addEventListener('mousemove', function (e) {
+        let angel = document.querySelector('#angel');
+        if(flag){
+            aa(e);
+            flag=false;
+        }
+
+    })
+
+    function aa(e) {
+        timer=setTimeout(function () {
+            angel.style.left = e.pageX + 'px';
+            angel.style.top = e.pageY + 'px';
+            flag = true;
+            timer=null;
+            console.log('ok');
+        }, 16)
+
+        /* 
+            防抖和节流的区别：
+                防抖：如果事件被频繁触发，防抖能保证只有最有一次触发生效！前面n多次的触发都会被忽略
+                节流：如果事件被频繁触发，节流能够减少事件触发的频率，因此，节流是有选择性地执行一部分事件
+        */
+    }
+</script>

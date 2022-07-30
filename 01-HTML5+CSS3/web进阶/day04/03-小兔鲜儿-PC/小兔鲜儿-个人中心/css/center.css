@@ -1,0 +1,188 @@
+.main{
+    background-color: #f6f6f6;
+}
+
+.main .wrapper{
+    display: flex;
+    padding: 29px 0 85px 0;
+}
+
+.main .user{
+    margin-right: 18px;
+    width: 227px;
+    background-color: pink;
+    min-height: 500px;
+}
+
+.main .major{
+    flex: 1;
+    /* background-color: skyblue; */
+    min-height: 500px;
+}
+
+/* 导航栏 */
+.main .major .xtx_one{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 19px 65px 22px 88px;
+    margin-bottom: 18px;
+}
+
+.main .major .xtx_one div ul{
+    display: flex;
+}
+
+.main .major .xtx_one div li{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.main .major .xtx_one div:nth-child(1) ul{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* background-color: yellow; */
+    border-right: 1px solid #f4f4f4;
+}
+
+.main .major .xtx_one div:nth-child(1) li img{
+    margin-bottom: 16px;
+    width: 25px;
+	height: 22px;
+}
+
+.main .major .xtx_one div:nth-child(1) li{
+    padding: 27px 80px 12px 0px;
+}
+
+.main .major .xtx_one div:nth-child(2) li{
+    padding: 27px 0 12px 101px;
+    /* padding-left: 101px; */
+}
+
+.main .major .xtx_one div:nth-child(2) li p:nth-child(1){
+    /* padding-bottom: 16px; */
+    font-size: 25px;
+    color: #e05e30;
+}
+/* 导航栏 */
+
+.major >div{
+    background-color: #fff;
+}
+
+/* 我的订单 */
+.main .major .order{    
+    padding: 28px 17px 28px 25px;
+    background-color: #fff;
+    /* background-color: yellow; */
+}
+
+.main .major .order .order_neirong a{
+    line-height: 8px;
+}
+
+.main .major .order .order_neirong{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    /* vertical-align: bottom; */
+    /* text-align: center; */
+}
+
+.main .major .order .order_neirong h2{
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.main .major .order .order_neirong a{
+    color: #999999;
+}
+
+.main .major .order .message{
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0 14px 12px;
+    margin-bottom: 21px;
+    border: solid 1px #f4f4f4;
+    
+}
+
+.main .major .order .message .goods_image{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-right: 1px solid #999999;
+
+}
+
+.main .major .order .message .goods_image img{
+    width: 107px;
+    height: 107px; 
+}
+
+.main .major .order .message .goods_image .ttt{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.main .major .order .message .goods_image .ttt >span{
+    font-size: 14px;
+    color: #e05e30;
+    margin-right:80px ;
+}
+
+.main .major .order .message .goods_image .ttt .aa{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .major .order .message .goods_image .ttt .aa p{
+    background-color: #ffffff;
+    color: #999999;
+    font-size: 12px;
+}
+
+.hhh{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.heiha{
+    border-right: 1px solid #999999;
+}
+
+.heiha span:nth-child(1){
+    color: #9a2e1f;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+
+.hahei button{
+    margin-bottom: 16px;
+    width: 100px;
+    height: 30px;
+    background-color: #5eb69c;
+    border-radius: 2px;
+    color: #ffffff;
+}
+
+.heiha{
+    font-size: 14px;
+}
+
+.heiha a{
+    margin-bottom: 10px;
+}
+

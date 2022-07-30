@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #s{
+            width: 175px;
+            height: 280px;
+            margin-left: 400px;
+            margin-top: 100px;
+            border-style: solid;
+            border-color: black;
+        }
+        #jsz{
+            position: relative;
+            float:right;
+            top: 20px;
+        }
+    </style>
+    <script>
+        var t=-1;
+        var str2='';
+        var str3='';
+        var str4='';
+        var str='';
+        var str5=';'
+        var count=0;
+        function sz(a){
+            if((a=='+' || a=='-' || a=='*' || a=='/' || a=='.') && str==''){
+                str=0+a;
+            }else{
+                if((a=='+' || a=='-' || a=='*' || a=='/' || a=='.') && str.charAt(str.length-1)=='.'){
+                    str=str.substring(0,str.length-1);
+                }
+                if((a=='+' || a=='-' || a=='*' || a=='/' || a=='.') && (str.charAt(str.length-1)=='+' || str.charAt(str.length-1)=='-' || str.charAt(str.length-1)=='*') || str.charAt(str.length-1)=='/'){
+                    str=str.substring(0,str.length-1);
+                    str=str+a;
+                }else{
+                    if(a=='<--'){
+                        str=str.substring(0,str.length-1);
+                    }else if(a=='c'){
+                        str='';
+                        str.str2,str3,str4='';
+                        t=-1;
+                    }else if(a==1){
+                        var s=document.getElementById("1").value;
+                        str=str+s;
+                    }else if(a==2){
+                        var s=document.getElementById("2").value;
+                        size=parseFloat(document.getElementById("2").value);
+                        str=str+s;
+                    }else if(a==3){
+                        var s=document.getElementById("3").value;
+                        str=str+s;
+                    }else if(a==4){
+                        var s=document.getElementById("4").value;
+                        str=str+s;
+                    }else if(a==5){
+                        var s=document.getElementById("5").value;
+                        str=str+s;
+                    }else if(a==6){
+                        var s=document.getElementById("6").value;
+                        str=str+s;
+                    }else if(a==7){
+                        var s=document.getElementById("7").value;
+                        str=str+s;
+                    }else if(a==8){
+                        var s=document.getElementById("8").value;
+                        str=str+s;
+                    }else if(a==9){
+                        var s=document.getElementById("9").value;
+                        str=str+s;
+                    }else if(a==0){
+                        var s=document.getElementById("0").value;
+                        str=str+s;
+                    }else if(a=='+'){
+                        var s=document.getElementById("+").value;
+                        str=str+s;
+                    }else if(a=='-'){
+                        var s=document.getElementById("-").value;
+                        str=str+s;
+                    }else if(a=='*'){
+                        var s=document.getElementById("*").value;
+                        str=str+s;
+                    }else if(a=='/'){
+                        var s=document.getElementById("/").value;
+                        str=str+s;
+                    }else if(a=='.'){
+                        
+                    }
+                }
+            }
+            var jg=document.getElementById("jg");
+            if(a=='='){
+               if(str.charAt(str.length-1)=='+' || str.charAt(str.length-1)=='-' || str.charAt(str.length-1)=='/' || str.charAt(str.length-1)=='*' ||str.charAt(str.length-1)=='.') {
+                    str=str.substring(0,str.length-1);
+               } 
+               jg.innerHTML=eval(str);
+            }else{
+                jg.innerHTML=str;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="s">
+        <div id='jg'></div>
+        <input type="button" value="c" style="height: 40px; width: 60px; margin-top:80px;"  id="c" onclick="sz('c')">
+        <input type="button" value="<--" style="height: 40px; width: 60px; margin-top: 80px;" id="<--" onclick="sz('<--')">
+        <input type="button" value="*" style="height: 40px; width: 40px; margin-top: 80px;" id="*" onclick="sz('*')">
+        <input type="button" value="7" style="height: 40px; width: 40px;" id="7" onclick="sz(7)">
+        <input type="button" value="8" style="height: 40px; width: 40px;" id="8" onclick="sz(8)">
+        <input type="button" value="9" style="height: 40px; width: 40px;" id="9" onclick="sz(9)">
+        <input type="button" value="+" style="height: 40px; width: 40px;" id="+" onclick="sz('+')">
+        <input type="button" value="4" style="height: 40px; width: 40px;" id="4" onclick="sz(4)">
+        <input type="button" value="5" style="height: 40px; width: 40px;" id="5" onclick="sz(5)">
+        <input type="button" value="6" style="height: 40px; width: 40px;" id="6" onclick="sz(6)">
+        <input type="button" value="-" style="height: 40px; width: 40px;" id="-" onclick="sz('-')">
+        <input type="button" value="1" style="height: 40px; width: 40px;" id="1" onclick="sz(1)">
+        <input type="button" value="2" style="height: 40px; width: 40px;" id="2" onclick="sz(2)">
+        <input type="button" value="3" style="height: 40px; width: 40px;" id="3" onclick="sz(3)">
+        <input type="button" value="/" style="height: 40px; width: 40px;" id="/" onclick="sz('/')">
+        <input type="button" value="0" style="height: 40px; width: 60px;" id="0" onclick="sz(0)">
+        <input type="button" value="." style="height: 40px; width: 60px;" id="." onclick="sz('.')">
+        <input type="button" value="=" style="height: 40px; width: 40px;" id="=" onclick="sz('=')">
+    </div>
+</body>
+</html>

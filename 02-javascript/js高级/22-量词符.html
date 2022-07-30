@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /* 
+        量词符
+
+        量词        说明
+        *           重复零次或更多次
+        +           重复一次或更多次
+        ?           重复零次或一次
+        {n}         重复n次
+        {n,}        重复n次或更多次
+        {n,m}       重复n到m次
+    */
+
+    // 量词符:用来设定某个模式出现的次数
+    // 简单理解:就是让下面的a这个字符重复多少次
+    var reg=/^a&/;
+
+    // * 相当于>=0 可以出现0次或者很多次
+
+    // + 相当于 >=1 可以出现1次或者很多次
+    // ? 相当于 1次 或者 0次
+    // {3} 就是重复三次
+    // {3,} 大于等于3
+    // {3,16} 大于等于3 并且小于等于16
+</script>

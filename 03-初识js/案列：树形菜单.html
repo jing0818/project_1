@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dd{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt><input type="button" onclick="test()" id='aaa' value="文学艺术" ></dt>
+        <dd name='c'>123</dd>
+        <dd name='c'>321</dd>
+        
+    </dl>
+</body>
+</html>
+<script>
+    function test(){
+        var s=document.getElementsByName('c');
+        for(i=0;i<s.length;i++){
+            if(s[i].style.visibility=='hidden'){
+                s[i].style.visibility="visible";
+            }else s[i].style.visibility='hidden';
+            
+        }
+    }
+</script>

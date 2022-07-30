@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./template-web.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+ 
+    <!-- 标准语法-原文输出
+    {{@ value}}
+    如果要输出的value值中，包含了HTML标签结构，则需要使用原文输出语法，才能保证HTML标签被正常渲染 -->
+
+    <!-- 
+        标准语法-过滤器
+
+        {{value | filterName}}
+        过滤器雷士管道操作符，它的上一个输出作为下一个输入
+
+        定义过滤器的基本语法如下：
+            template.defaults.imports.fileterName=function(value){return处理的结果}
+
+     -->
+
+    <script type="text/html" id="tpl-user">
+        <h1>{{name}}</h1>
+        <div>
+            {{if flag===0}}
+            flag的值是0
+            {{else if flag===1}}
+            flag的值是1
+            {{else}}
+            flag的值不知道是多少
+            {{/if}}
+        </div>
+
+        <h3>{{regTime | dateFormat}}</h3>
+    </script>
+
+<script>
+    template.defaults.imports.dateFormat=function(date){
+        var y=date.getFullYear();
+        var m=date.getMonth()+1;
+        var d=date.getDate();
+        return y+"-"+m+"-"+d;
+    }
+
+    // 2：定义需要渲染的数据
+    var data={name:'zs',flag:12,regTime:new Date()}
+
+    // 4:调用template函数
+    let htmlStr=template("tpl-user",data);
+    console.log(htmlStr);
+    document.body.innerHTML+=htmlStr;
+
+
+
+</script>

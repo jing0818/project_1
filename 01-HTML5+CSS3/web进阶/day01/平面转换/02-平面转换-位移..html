@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 语法：transfrom:translate(水平移动距离,垂直移动距离) 
+                取值：正负均可
+                取值如果是百分比参考自身尺寸计算结果
+        */
+
+        .father{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 2px solid #333;
+            margin: 100px auto;
+        }
+
+        .son{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            transition: all 1s;
+        }
+
+        .father:hover .son{
+            transform: translate(100px,200px);
+
+            /* 只取一个数水平方向 */
+            transform: translate(100px);
+            transform: translateX(20px);
+            transform: translateY(20px);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+</body>
+</html>

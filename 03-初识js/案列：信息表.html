@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <input type="text" id='t1' placeholder="请输入编号">
+        <input type="text" id='t2' placeholder="请输入姓名">
+        <input type="text" id='t3' placeholder="请输入性别">
+        <input type="button" value="提交" onclick="add()">
+        <input type="button" value="修改" onclick="update()">
+    </div>
+    <br>
+    <br>
+    <table border="1" id ='table' cellspacing="0" align="center" >
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>操作</td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function update(){
+        var id=prompt('请输入你要修改的编号');
+        var size=verify(id);
+        if(size!=-1){
+            var newId=prompt('请输入【新】的学生编号');
+            var index=verify(newId);
+            if(index==-1){
+                var td=document.getElementsByTagName('tr')[size].childNodes;
+                td[0].innerText=newId;
+            }else alert('学生编号重复');
+        }else alert('找不到你要修改的学生编号');
+    }
+
+    function verify(id){
+        var index=-1;
+        var trs=document.getElementsByTagName('tr');
+        for(i=1;i<trs.length;i++){
+            var tds=trs[i].childNodes;        
+            if(tds[0].innerText===id){
+                index=i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    //增加
+    function add(){
+        var t1=document.getElementById('t1').value;
+        var t2=document.getElementById('t2').value;
+        var t3=document.getElementById('t3').value;
+        var index=verify(t1);
+        if(index==-1){
+            var table=document.getElementById('table');
+            str='<tr><td>'+t1+'</td><td>'+t2+'</td><td>'+t3+'</td><td><input type="button" value="删除" onclick="del(this)"></td></tr>';
+            table.innerHTML+=str;
+        }else alert('编号存在，增加失败');
+    }
+
+    //删除
+    function del(obj){
+        var s=confirm("确定要删除？")
+        if(s){
+            var tr=obj.parentNode.parentNode;
+            var table=obj.parentNode.parentNode.parentNode;
+            table.removeChild(tr);
+        }
+        
+        //第二种删除方式
+        /*
+        var tr=obj.parentNode.parentNode;
+        var table=document.getElementById('table');
+        table.deleteRow(tr.rowIndex);
+        */
+    }
+    /*
+   function tj(){
+        //获取input数据
+        var t1=document.getElementById('t1').value;
+        var t2=document.getElementById('t2').value;
+        var t3=document.getElementById('t3').value;
+
+        //创建tr
+        var tr=document.createElement('tr');
+
+        //创建tr子节点
+        var td1=document.createElement('td');
+        var td2=document.createElement('td');
+        var td3=document.createElement('td');
+        var td4=document.createElement('td');
+
+        td1.innerText=t1;
+        td2.innerText=t2;
+        td3.innerText=t3;
+        td4.innerHTML='<input type="button" value="删除" onclick="del(this)">';
+
+        //获取table
+        var table=document.getElementById("table");
+        table.appendChild(tr);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+   }
+   function del(obj){
+       var tr=obj.parentNode.parentNode;
+       var tale=obj.parentNode.parentNode.parentNode;
+       table.removeChild(tr);
+   }
+   */
+</script>

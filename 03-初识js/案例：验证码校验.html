@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hz{
+            border-style: solid;
+            border-color: yellowgreen;
+            background-color: yellowgreen;
+            width: 50px;
+            height: 25px;
+            float: left;
+            padding-left:10px;
+        }
+        #wy{
+            margin-left: 20px;
+            float: left;
+            position: relative;
+            top: 2px;
+        }
+    </style>
+    <script>
+        function getYzm(){
+            var str=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','Y','W','X','Y','Z'];
+            //alert(str.length);
+            var size=parseInt(Math.random()*str.length);
+            var mydiv=document.getElementById("hz");
+            var yzm='';
+            console.log(size);
+            for(i=0;i<=3;i++){
+                var size=parseInt(Math.random()*str.length);
+                yzm=yzm+str[size];
+            }
+            mydiv.innerHTML=yzm;
+        }
+        function text01(){
+            var str=document.getElementById("123").value;
+            alert(str);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div id="hz" onclick="getYzm()"><font id="123" value="123">123</font></div>
+        <input type="button" value="看不清？换一张" onclick="getYzm()" id="wy">
+    </div>
+    <input type="button" value="保存" onclick="text01()">
+</body>
+</html>

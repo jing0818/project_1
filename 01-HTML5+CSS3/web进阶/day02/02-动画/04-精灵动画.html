@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>精灵动画</title>
+  <style>
+    .box {
+      /* 1680/12 */
+      width: 140px;
+      height: 140px;
+      /* border: 1px solid #000; */
+      background-image: url(./images/bg.png);
+      animation: 
+            change 1s steps(12) infinite,
+            run 3.5s forwards 
+      ;
+    }
+
+    @keyframes change{
+      /* 动画开始状态和盒子的默认样式相同的，可以省略开始状态的代码 */
+      /* from{
+        background-position: 0 0; 
+      } */
+      to{
+        background-position: -1680px 0;
+      }
+    }
+
+    @keyframes run{
+      from{
+        transform: translateX(0);
+      }
+      to{
+        transform: translateX(800px);
+      }
+    }
+
+    
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+@import "./base.less";
+@import "./normalize.less";
+
+@rem:37.5rem;
+
+body{
+    background-color: #f0f0f0;
+}
+
+//公共样式
+.planner{
+    background-color: #fff;
+    margin-bottom: (15 /@rem);
+}
+
+.public{
+    display: flex;
+    padding: (8 / @rem) 0 (17 / @rem) (15 / @rem);
+}
+
+
+
+// 轮播图
+.banner{
+    width: 100%;
+}
+// 轮播图
+
+// 标题
+
+h2{
+    margin: (10 / @rem) 0 (15 / @rem) (15 / @rem);
+    font-size: 14px;
+    color: #3C3C3C;
+}
+
+// 标题
+
+
+// 主体区域
+
+.main{
+    padding-bottom: (64 / @rem);
+
+    .activity{
+        .pic{
+            position: relative;
+
+            img{
+                height: (160 / @rem);
+            }
+
+            .state{
+                position: absolute;
+                top: (-5 / @rem);
+                left: (15 /@rem);
+                text-align: center;
+                width:(68 / @rem);
+                height: (29 / @rem);
+                background-image: url("../images/status_active.png");
+                background-size: 100%;
+                font-size: 12px;
+                color: #ffffff;
+                line-height: (25 / @rem);
+            }            
+        }
+
+        .txt{
+            font-size: 15px;
+            color: #3C3C3C;
+
+            div:first-child{
+                width: (295 / @rem);
+            }
+
+            div:last-child{
+                flex: 1;
+                text-align: center;
+                color: #FE6249;
+            }
+        }
+
+        .hint{
+            display: flex;
+            font-size: 11px;
+            color: #B4B4B4;
+            padding-bottom: (11 / @rem);
+
+            div{
+                // text-align: center;
+                // vertical-align: middle;
+                display: flex;
+            }
+
+            div:first-child{
+                margin-right: (15 / @rem);
+            }
+            span{
+                font-size: (5 / @rem);
+            }
+         
+        }
+    }
+
+
+}
+
+// 主体区域
+
+
+//底部区域
+footer{
+    display: flex;
+    position: fixed;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    height: (49 / @rem);
+    width: 100%;
+    background-color: #FECA49;
+
+    a{
+        color: #D78B09;
+
+        span{
+            font-size: (24 /@rem);
+        }
+    }
+
+    p{
+        font-size: 11px;
+        color: #D78B09;
+    }
+
+    a:first-child{
+        span,p{
+            color: #ffffff;
+        }
+    }
+    
+}
+//底部区域

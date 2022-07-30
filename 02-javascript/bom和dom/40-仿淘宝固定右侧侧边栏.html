@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+        
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+        
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+        
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+        
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+</body>
+</html>
+<script>
+    var header=document.querySelector('.header');
+    var a=document.querySelector('.slider-bar');
+    var banner=document.querySelector('.banner');
+    var go=document.querySelector('.goBack');
+    var bannerTop=banner.offsetTop;
+    var mainTop=document.querySelector('.main').offsetTop;
+    var b=a.offsetTop-bannerTop;
+    console.log(b);
+    document.addEventListener('scroll',function(){
+        // window.pageYOffset  页面被卷去的头部
+        console.log(window.pageYOffset);
+        if(window.pageYOffset>bannerTop){
+            a.style.position='fixed';
+            a.style.top=b+'px';
+        }else{
+            a.style.position='absolute';
+            a.style.top='300px';
+        }
+        if(window.pageYOffset>mainTop){
+            go.style.display='block';
+        }else{
+            go.style.display='none';
+        }
+    })
+    go.addEventListener('click',function(){
+        window.scroll(0,0);
+    })
+</script>

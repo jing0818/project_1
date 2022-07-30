@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 实例化Promise对象
+    const p = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            // let data = "数据库中的用户数据";
+            // 成功时调用
+            // resolve(data);
+
+            // 失败时调用
+            let data="数据库获取数据失败";
+            reject(data);
+        }, 1000)
+    });
+
+    // then方法两个回调函数，第一个在成功时会调用，第二个在失败时会调用
+    p.then(function (value) {
+        console.log(value);
+    }, function (reason) {
+        console.log(reason);
+    })
+</script>

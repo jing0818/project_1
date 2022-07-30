@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 1200px;
+            height: 300px;
+            border: 2px solid pink;
+            margin: 100px auto;
+        }
+
+        img{
+            transition: all 20s;
+        }
+
+        div:hover img{
+            transform: translateX(1000px) rotate(360deg);
+            /* 
+                不行：旋转会改变坐标轴向，先旋转改变了坐标轴向，位移方向回收影响 -- 多重转换如果涉及到旋转往最后书写
+            */
+            transform:rotate(360deg) translateX(1000px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./image/tyre.png" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            window.setTimeout：在规定的时间之后执行某个函数
+
+            window.setInterval:每隔多长时间执行某个函数
+        */
+
+        function a(){
+            alert('cccc');
+        }
+        function text01(){
+            //第一种写法
+            //window.setTimeout("alert('aaa')",1000);
+
+            //第二种写法
+            // window.setTimeout(function(){
+            //     alert('bbbb');
+            // },1000);
+
+            window.setTimeout(a,1000)
+        }
+        function text02(){
+            window.setInterval('alert("傻狗")',3000);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" onclick="text01()">
+    <input type="button" value="按钮2" onclick="text02()">
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="user-scalable=no">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+<script>
+    /* 
+        1：禁用缩放，浏览器禁用默认的双击缩放行为并且去掉300ms的点击延迟。
+            <meta name="viewport" content="user-scalable=no">
+
+        2：利用touch事件自己封装这个事件解决300ms延迟
+    */
+    var div=document.querySelector('div');
+    div.addEventListener('click',function(){
+        alert(123);
+    })
+
+
+    // 封装tap，解决click 300ms 延时
+    function tap(obj,callback){
+        var isMOve=false;
+        var startTime=0;// 记录触摸时候的时间变量
+        obj.addEventListener('touchstart',function(e){
+            startTime=Data.now();// 记录触摸时间
+        })
+        obj.addEventListener('touchmove',function(e){
+            isMOve=true;// 看看是否滑动，哟滑动算拖拽，不算点击
+        })
+        obj.addEventListener('touchend',function(e){
+            // 如果手指触摸和离开时间小于150ms算点击
+            if(!isMOve && (Date.now()-startTime)<150){
+                callback && callback();// 执行回调函数
+            }
+            isMOve=false;// 取反 重置
+            startTime=0;
+        })
+    }
+
+
+</script>

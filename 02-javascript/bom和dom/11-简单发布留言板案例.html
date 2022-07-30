@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 100px;
+        }
+        
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+        
+        ul {
+            margin-top: 50px;
+        }
+        
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        li button{
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="txt"></textarea>
+    <button onclick="sss()">发布</button>
+    <ul>
+
+    </ul>
+</body>
+</html>
+<script>
+    function sss(){
+        var txt=document.querySelector("#txt");
+        var ul=document.querySelector("ul");
+        var li=document.createElement("li");
+        var btn=document.createElement("button");
+        btn.innerText="删除";
+        btn.id="btn";
+        btn.setAttribute("onclick","del(this)");
+        li.innerHTML=txt.value;
+        li.appendChild(btn);
+        ul.insertBefore(li,ul.children[0]);
+    }
+
+    function del(obj){
+        var ul=document.querySelector("ul");
+        var li=obj.parentNode;
+        ul.removeChild(li);
+    }
+   
+
+    
+</script>

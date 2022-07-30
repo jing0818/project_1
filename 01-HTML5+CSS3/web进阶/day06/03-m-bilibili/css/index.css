@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: Helvetica Neue, Tahoma, Arial, PingFangSC-Regular, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.header {
+  height: 22.4vw;
+  background-color: pink;
+}
+.header .t-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 11.73333333vw;
+}
+.header .t-header .logo {
+  flex: 1;
+  padding-left: 4.8vw;
+}
+.header .t-header .logo i {
+  font-size: 7.46667vw;
+  color: #fb7299;
+}
+.header .t-header .operate {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2px;
+}
+.header .t-header .operate i {
+  color: #ccc;
+}
+.header .t-header .operate img {
+  width: 6.4vw;
+  height: 6.4vw;
+}
+.header .t-header .operate img:last-child {
+  width: 21.33333333vw;
+}
+.header .b-header {
+  display: flex;
+  padding-left: 4.8vw;
+}
+.header .b-header a {
+  display: block;
+  width: 17.6vw;
+  height: 100%;
+}
+.header .b-header span {
+  padding-bottom: 10px;
+}
+.header .b-header a:first-child span {
+  border-bottom: 2px solid yellow;
+}

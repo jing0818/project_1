@@ -1,0 +1,5 @@
+git配置用户信息
+    安装玩Git之后，要做的第一件事就是设置自己的用户名和邮件地址。因为通过Git对项目进行版本管理的时候
+    Git需要使用这些基本信息，来记录是谁对项目进行了操作：
+        git config --global user.name 'itheima'
+        git config --global user.email 'itheima@itcast.cn'

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ul>
+</body>
+</html>
+<script>
+    /* 
+        获取所有子元素节点  parentNode.children(非标准)
+
+        parentNode.children 是一个只读属性，返回所有的子元素节点。
+        它只返回子元素节点，区域节点不返回
+
+        获取第一个子节点：parentNode.firstChild
+        获取最后一个子节点：parentNode.lastChild
+
+        获取第一个子元素节点：parentNode.firstElementChild
+        获取最后一个子元素节点：parentNode.lastElementChild
+
+    */
+    let lis=document.querySelector("ul").children;
+    // 实际开发的写法  既没有兼容性问题又返回第一个子元素
+    console.log(lis[0]);
+    console.log(lis[lis.length-1]);
+</script>

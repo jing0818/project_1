@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function text(){
+            window.location.href="http://www.baidu.com";
+        }
+        function text02(){
+            window.location.href="http://www.4399.com";
+        }
+        function text03(){
+            var url=document.getElementById("url").value;
+            window.location.href=url;
+        }
+        function text04(){
+            alert(navigator.appVersion);
+        }
+        function text05(){
+            alert("高："+window.screen.height+"-----宽："+window.screen.width)
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        self.location=document.referrer;
+        返回上一层页面并刷新
+
+
+        history:前进后退
+            window.history.forword():下一页
+            window.history.back():上一页
+            window.history.go(i):如果i是正数就是前进几页，为负数就是后退几页
+
+
+        location:页面跳转
+            window.location.href=输入网址
+
+        navigator:查询浏览器版本信息
+            navigator.appVersion：查询浏览器版本信息
+            navigator.appName：查询浏览器名称
+
+        screen:查询屏幕高宽
+            screen.width:查询屏幕的宽
+            screen.height:查询屏幕的高
+     -->
+    <a href="案列实现：放大器.html">点击进入放大器</a>
+    <input type="button" value="下一页" onclick="window.history.go(1)">
+
+    <input type="button" value="页面跳转" onclick="text()">
+    <input type="button" value="4399小游戏" onclick="text02()">
+
+    <input type="text" placeholder="请输入你要跳转的网址" id="url">
+    <input type="button" value="搜索" onclick="text03()">
+
+    <input type="button" value="查询浏览器版本信息" onclick="text04()">
+
+    <input type="button" value="查询屏幕高宽" onclick="text05()" >
+</body>
+</html>

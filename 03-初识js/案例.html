@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机</title>
+    <script>
+        function js(){
+            //document.getElementById()获取文本框里面的值
+            //innerHTML()赋值到前台页面
+            var i=parseFloat($("one").value);
+            var s=parseFloat($("two").value);
+            var ysf=$("ysf").value;
+            var mydiv=$("mydiv");
+            var num;
+            var str;
+            if(isNaN(i) || isNaN(s)){
+                str="输入值有误，无法计算";
+            }else{
+                if(ysf==='+'){
+                    num=(i+s);
+                }else if(ysf==='-'){
+                    num=i-s;
+                }else if(ysf==='*'){
+                    num=i*s;
+                }else if(ysf==='/'){
+                    num=i/s;
+                }
+                str="结果为："+num;
+            }
+            if(num==Infinity || num===NaN){
+                str="错误计算";
+            }
+            mydiv.innerHTML=str;
+        }
+        function $(id){
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+    <div>第一个值：<input type="text" id="one" placeholder="第一个值" ></div>
+    <div>第二个值：<input type="text" id="two" placeholder="第二个值" ></div>
+    <div>
+        运算符：
+        <select id="ysf">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+    </div>
+    <div><input type="button" value="计算" onclick="js()"></div>
+    <div id="mydiv"></div>
+</body>
+</html>

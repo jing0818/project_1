@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./jquery3.6.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /*  
+        axios发起GET请求：
+            axios.get('url',{params:{参数}}).then(callback)
+    */
+   let url='http://www.liulongbin.top:3006/api/get';
+   let parmsObj={name:'zs',age:20};
+   axios.get(url,{params:parmsObj}).then(function(res){
+    console.log(res.data);
+   })
+
+//    axios发送post请求
+   let url2='http://www.liulongbin.top:3006/api/post';
+   let dataObj={location:'北京',address:'顺义'};
+   axios.post(url2,dataObj).then(function(res){
+    console.log(res);
+   })
+
+   /* 
+        直接使用axios发起请求
+
+        axios({
+            method:'请求类型',
+            url:'请求的URL地址',
+            data:{POST数据},
+            params:{GET数据}
+        }).then(callback)
+   */
+</script>

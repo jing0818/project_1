@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="uname" autocomplete="off">
+        <input type="password" name="upwd">
+        <button type="submit">提交</button>
+    </form>
+</body>
+
+</html>
+<script>
+    let form = document.querySelector('form');
+    // Ajax操作往往用来提交表单数据。为了方便表单处理，HTML5新增了一个FormData对象，可以模拟表单操作：
+    // 1：新建FormData对象
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+
+        // 3：创建xhr对象
+        let xhr = new XMLHttpRequest();
+        // 4：指定请求类型和url地址
+        xhr.open('POST', 'http://www.liulongbin.top:3306/api/formdata')
+        // 5：直接提交FormData对象，这与提交网页表单的效果，完全一样
+        xhr.send(fd);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(JSOn.parse(xhr.responseText));
+            }
+        }
+    })
+
+</script>

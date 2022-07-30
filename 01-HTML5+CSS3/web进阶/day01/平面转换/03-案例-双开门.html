@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 1220px;
+            height: 500px;
+            background-image: url(./image/内饰.png);
+            background-size: 100%;
+            margin: 0 auto;
+            overflow:hidden;
+        }
+
+        .left,.right{
+            width: 610px;
+            height: 500px;
+            background-size: 100%;
+            transition: all 0.5s;
+        }
+
+        .left{
+            float: left;
+            background-image: url(./image/left.jpg);
+        }
+
+        .right{
+            float: right;
+            background-image: url(./image/right.jpg);
+        }
+
+        .box:hover .left{
+            transform: translate(-100%);
+        }
+
+        .box:hover .right{
+            transform: translate(100%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

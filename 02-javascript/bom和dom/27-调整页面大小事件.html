@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    /* 
+        resize ：当页面窗口大小变化了触发的函数
+
+        window.innerWidth  获取当前屏幕的宽度
+        window.innerHeight 获取当前屏幕的高度
+    */
+    window.addEventListener('resize',function(){
+        console.log(window.innerWidth);
+        if(window.innerWidth<900){
+            document.querySelector('div').style.display='none';
+        }else{
+            document.querySelector('div').style.display='block';
+        }
+    })
+</script>

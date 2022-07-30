@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pic{
+            position: relative;
+            width: 450px;
+            border: 1px solid #ccc;
+        }
+
+        .mask{
+            display: block;
+            position: absolute;
+            top: 39px;
+            left: 39px;
+            width: 300px;
+            height: 300px;
+            background-color: #fede4f;
+            opacity: .5;
+            /* cursor: move; */
+
+        }
+        .big{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 460px;
+            width: 500px;
+            height: 500px;
+            /* background-color: pink; */
+            border: 1px solid #ccc;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .big img{
+            position: absolute;
+            /* width: 100%;
+            height: 100%; */
+        }
+    </style>
+</head>
+<body>
+    <div class="pic">
+        <img src="./image/13.jpg" alt="">
+        <div class="mask"></div>
+        <div class="big">
+            <img src="./image/bigavif.avif" alt="" class="bigImg">
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var pic=document.querySelector('.pic');
+    var mask=document.querySelector('.mask');
+    var big=document.querySelector('.big');
+    var bigImg=document.querySelector('.bigImg');
+
+     
+    pic.addEventListener('mouseover',function(){
+        mask.style.cursor="move";
+        mask.style.display='block';
+        big.style.display='block';
+
+    })
+    pic.addEventListener('mouseout',function(){
+        mask.style.display='none';
+        big.style.display='none';
+    }) 
+    pic.addEventListener('mousemove',function(e){
+        // 计算出鼠标在盒子内的坐标
+        var x=e.pageX-this.offsetLeft;
+        var y=e.pageY-this.offsetTop;
+        
+
+        var width=mask.offsetWidth/2;
+        var height=mask.offsetHeight/2;
+
+        if(x-width<=0){
+            x=0;
+        }else if(x>mask.offsetWidth){
+            x=mask.offsetWidth/2;
+        }else{
+            x-=width;
+        }
+        if(y-height<=0){
+            y=0;
+        }else if(y>mask.offsetHeight){
+            y=mask.offsetHeight/2;
+        }else{
+            y-=height;
+        }
+        mask.style.left=x+'px';
+        mask.style.top=y+'px';
+
+        var bigMax=bigImg.offsetWidth-big.offsetWidth;
+        var a=pic.offsetWidth-mask.offsetWidth;
+        
+        bigImg.style.left=-x*bigMax/a+'px';
+        bigImg.style.top=-y*bigMax/a+'px';
+        
+    })
+</script>

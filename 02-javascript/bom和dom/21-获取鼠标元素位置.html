@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+</html>
+<script>
+    /* 
+        鼠标事件对象            说明
+        e.clientX               返回鼠标相对于浏览器窗口可视区的X坐标
+        e.clientY               返回鼠标相对于浏览器窗口可视区的Y坐标
+        e.pageX                 返回鼠标相对于文档页面的X坐标 IE9+支持
+        e.pageY                 返回鼠标相对于文档页面的Y坐标 IE9+支持
+        e.screenX               返回鼠标相对于电脑屏幕的X坐标
+        e.screenY               返回鼠标相对于电脑屏幕的Y坐标
+    */
+    document.addEventListener('click',function(e){
+        // 获取鼠标点击的X，Y轴位置
+        console.log(e.clientX);
+        console.log(e.clientY);
+    })
+</script>

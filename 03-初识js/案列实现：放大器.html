@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #s{
+           margin-left: 200px;
+       }
+       #ys{
+            width: 50px;
+            height: 50px;
+            float: left;
+       }
+    </style>
+    <script>
+        function cfq(obj,imgsrc){
+           var imgbig=document.getElementById("imgbig");
+           imgbig.src=imgsrc;
+
+           //给选中的小图加框框
+           obj.style.outline="1px red solid";
+        }
+
+        function out(obj){
+            obj.style.outline="none";
+        }
+
+        /*
+            border:边框，它是绘制在元素周边的一条线，所以加上就会占像素
+            outline：轮廓线，它是不占空间的
+        */
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="5">
+                <img src="img/digital-2.jpg" id="imgbig">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="img/1.png" onmousemove="cfq(this,'img/digital-2.jpg')" onmouseout="out(this)">
+            </td>
+            <td>
+                <img src="img/2.png" onmousemove="cfq(this,'img/digital-3.jpg')" onmouseout="out(this)">
+            </td>
+            <td>
+                <img src="img/3.png" onmousemove="cfq(this,'img/digital-4.jpg')" onmouseout="out(this)">
+            </td>
+            <td>
+                <img src="img/4.png" onmousemove="cfq(this,'img/digital-5.jpg')" onmouseout="out(this)">
+            </td>
+            <td>
+                <img src="img/5.png" onmousemove="cfq(this,'img/digital-6.jpg')" onmouseout="out(this)">
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="上一页" onclick="window.history.back()">
+</body>
+</html>

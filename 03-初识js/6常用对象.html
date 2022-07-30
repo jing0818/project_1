@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //数组
+        function text01(){
+
+            //第一种数组定义方式
+            var arr1=[1,'小唐',true];
+            //alert(arr1);
+
+            //第二种数组定义方式
+            var arr2=new Array(1,'小唐',true);
+            //alert(arr2);
+
+            //第三种数组定义方式
+            var arr3=new Array(2);//如果这里只有一个number类型，那么那个number表示的数组的长度，而不是值
+            arr3[0]=1;
+            arr3[1]=2;
+            arr3.length=10;//改变数组长度
+            //alert(arr3);
+            //alert(arr3.length);
+            //java中数组一旦定义长度不能改变，js中可以改变
+
+            /*
+                数组中常用的方法：
+                concat()：将两个数组合并成一个新的数组
+                join():改变数组数据之间的连接符
+            */
+
+            var arr4=arr1.concat(arr2);
+            //alert(arr4);
+
+            //join
+            var arr5=arr1.join('-');
+            alert(arr5);
+        }
+
+        //日期Date
+        function getDate(){
+            var date=new Date();//Fri Nov 26 2021 09:55:17 GMT+0800 (中国标准时间)
+            var time2=date.getFullYear()+"年"+date.getMonth()+"月"+date.getDate()+"日"+date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒";
+            alert(time2);
+        }
+
+        //Global对象
+        function testGlobal(){
+            var a='var b="123"';
+            //alert(a);
+
+            eval(a);//执行字符串里面的js语句
+            alert(b);
+        }
+
+        //Math对象  产生一个随机数
+        function getMath(){
+            //产生一个四位随机数
+            var i=parseInt(Math.random()*10000);
+            alert(i);
+        }
+
+        function textString(){
+            var a='abcfasdfa';
+            var i=1;
+            var j=3;
+            //截取字符串
+            var b=a.substring(i,j);//截取从下标i开始到第j个位置的数据
+            var b=a.substr(i,j);//i:起始位置  j:截取的长度
+            alert(b);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮1" onclick="text01()">
+    <input type="button" value="按钮2" onclick="getDate()">
+    <input type="button" value="按钮3" onclick="testGlobal()">
+    <input type="button" value="按钮4" onclick="getMath()" >
+    <input type="button" value="按钮5" onclick="textString()">
+</body>
+</html>

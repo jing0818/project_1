@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="set">存储</button>
+</body>
+</html>
+<script>
+    /* 
+        sessionStorage
+            1：生命周期为关闭浏览器窗口
+            2：在同一个窗口下数据可以共享
+            3：以键值对的形式存储使用
+
+        存储数据：
+            sessionStorage.setItem(key,value);
+
+        获取数据：
+            sessionStorage.getItem(key);
+
+        删除数据：
+            sessionStorage.removeItem(key);
+        删除所有数据：
+            sessionStorage.clear();
+    */
+   var ipt=document.querySelector('input');
+   var set=document.querySelector('.set');
+   var user=null;
+   set.addEventListener('click',function(){
+        // console.log(ipt.value);
+        var list={"uname":"zhangsan","age":18,sex:'男'};
+        console.log(list.uname);
+        sessionStorage.setItem("list",list);
+        user=sessionStorage.getItem('list');
+        console.log(typeof user);
+        
+   })
+   
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+     /* 
+            使用transform-style:preserve-3d呈现立体图形
+
+            实现方法：
+                添加transform-style:preserve-3d
+                使子元素处于真正的3d空间
+                默认值flat，表示子元素处于2D平面内呈现
+        */
+    .cube {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        background-color: pink;
+        transition: all .5s;
+        transform-style: preserve-3d;
+    }
+
+    .cube div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+    }
+
+    .front {
+        background-color: orange;
+        /* 向我走近200px */
+        transform: translateZ(200px);
+    }
+
+    .back {
+        background-color: green;
+    }
+
+    /* cube hover 为了看空间感效果 */
+    .cube:hover {
+        transform: rotateY(180deg);
+    }
+</style>
+</head>
+<body>
+<div class="cube">
+    <div class="front">前面</div>
+    <div class="back">后面</div>
+</div>
+</body>
+</html>

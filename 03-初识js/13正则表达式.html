@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    用户名：<input type="text" id='username' ><br>
+    密码：<input type="text" id="password"><br>
+    <input type="button" value="校验" onclick="verify()">
+</body>
+</html>
+<script>
+    function verify(){
+        var password=document.getElementById('password').value;
+
+        //制定正则表达式规则
+        var regex=/^[a-z]{6,16}$/;
+        //校验是否正确
+        var flag=regex.test(password);
+        if(flag){
+            alert('录入正确');
+        }else alert('录入失败');
+    }
+</script>
