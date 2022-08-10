@@ -15,40 +15,40 @@ const fs = require('fs');
 //     console.log(data);
 // })
 
-const p=new Promise((resolve,reject)=>{
-    fs.readFile("05-es6~es11/es6/file/为学.txt",'utf-8',(err,data)=>{
-        if(err){
+const p = new Promise((resolve, reject) => {
+    fs.readFile("05-es6~es11/es6/file/为学.txt", 'utf-8', (err, data) => {
+        if (err) {
             reject(err);
         }
         resolve(data);
     });
 })
 
-p.then((value)=>{
-    return new Promise((resolve,reject)=>{
-        fs.readFile("05-es6~es11/es6/file/春日.txt",'utf-8',(err,data)=>{
-            if(err){
+p.then((value) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile("05-es6~es11/es6/file/春日.txt", 'utf-8', (err, data) => {
+            if (err) {
                 reject(err);
             }
-            resolve([value,data]);
-        }); 
+            resolve([value, data]);
+        });
     })
-},(reason)=>{
+}, (reason) => {
     console.log(reason);
-}).then((value)=>{
-    return new Promise((resolve,reject)=>{
-        fs.readFile("05-es6~es11/es6/file/小池.txt",'utf-8',(err,data)=>{
-            if(err){
+}).then((value) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile("05-es6~es11/es6/file/小池.txt", 'utf-8', (err, data) => {
+            if (err) {
                 reject(err);
             }
             console.log(typeof value);
-            resolve([...value,data]);
-        }); 
+            resolve([...value, data]);
+        });
     })
-},(reason)=>{
+}, (reason) => {
     console.log(reason);
-}).then((value)=>{
+}).then((value) => {
     console.log(value.join('\r\n'));
-},(reason)=>{
+}, (reason) => {
     console.log(reason);
 })
